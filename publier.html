@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publier une annonce – SimWork Tanger</title>
+  <meta name="description" content="Publiez votre annonce immobilière gratuitement sur SimWork. Vendez ou louez votre bien à Tanger et dans la région.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="publier.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <div class="lang-btns">
+      <button class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</button>
+      <button class="lang-btn" onclick="setLang('ar')">🇲🇦 العربية</button>
+      <button class="lang-btn" onclick="setLang('es')">🇪🇸 Español</button>
+      <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+    </div>
+    <div class="nav-contact">
+      <a href="tel:+2120661354123">📞 0661 354 123</a>
+      <a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a>
+    </div>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+    
+    <button class="hamburger">☰</button>
+    
+    <ul class="nav-links desktop-only">
+      <li><a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a></li>
+      <li><a href="achat.html" data-i18n="shared.navBuy">Achat</a></li>
+      <li><a href="location.html" data-i18n="shared.navRent">Location</a></li>
+      <li><a href="contact.html" data-i18n="shared.navContact">Contact</a></li>
+    </ul>
+    <a href="publier.html" class="nav-cta desktop-only active" data-i18n="shared.navCta">+ Publier une annonce</a>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu-overlay">
+  <a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a>
+  <a href="achat.html" data-i18n="shared.navBuy">Achat</a>
+  <a href="location.html" data-i18n="shared.navRent">Location</a>
+  <a href="contact.html" data-i18n="shared.navContact">Contact</a>
+  <a href="publier.html" class="nav-cta" data-i18n="shared.navCta">+ Publier une annonce</a>
+</div>
+
+<!-- HERO -->
+<section class="inner-hero">
+  <h1 class="inner-hero-title" data-i18n="publier.heroTitle">Publier une annonce</h1>
+  <div class="breadcrumb">
+    <a href="index.html" data-i18n="publier.breadcrumbHome">Accueil</a>
+    <span>/</span>
+    <span data-i18n="publier.breadcrumbPublier">Publier</span>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="section publish-section">
+  <div class="publish-container">
+
+    <!-- Left: Info Panel -->
+    <div class="publish-info reveal">
+      <div class="publish-info-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+          <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <h2 data-i18n="publier.infoTitle">Vendez ou louez votre bien</h2>
+      <p data-i18n="publier.infoDesc">Remplissez le formulaire ci-contre pour soumettre votre annonce. Notre équipe la vérifiera et la publiera dans les plus brefs délais.</p>
+      
+      <div class="publish-steps">
+        <div class="publish-step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong data-i18n="publier.step1Title">Vos coordonnées</strong>
+            <span data-i18n="publier.step1Desc">Nom, email, téléphone</span>
+          </div>
+        </div>
+        <div class="publish-step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong data-i18n="publier.step2Title">Détails du bien</strong>
+            <span data-i18n="publier.step2Desc">Type, catégorie, ville, prix</span>
+          </div>
+        </div>
+        <div class="publish-step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong data-i18n="publier.step3Title">Description & envoi</strong>
+            <span data-i18n="publier.step3Desc">Décrivez et soumettez</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="publish-guarantee">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <span data-i18n="publier.guarantee">Publication gratuite · Vérification rapide</span>
+      </div>
+    </div>
+
+    <!-- Right: The Form -->
+    <div class="publish-form-wrap reveal">
+      <form id="publishForm" action="https://simwork.ma/annonce/add_annonce" method="post" enctype="multipart/form-data">
+
+        <!-- Section 1: Contact -->
+        <div class="form-section-title">
+          <span class="form-section-num">01</span>
+          <span data-i18n="publier.section1">Informations personnelles</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pub-name" data-i18n="publier.lblName">Nom et prénom</label>
+            <input type="text" name="name" id="pub-name" class="form-control" placeholder="Votre nom complet" required>
+          </div>
+          <div class="form-group">
+            <label for="pub-email" data-i18n="publier.lblEmail">Email</label>
+            <input type="email" name="email" id="pub-email" class="form-control" placeholder="votre@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pub-phone" data-i18n="publier.lblPhone">Téléphone</label>
+            <input type="text" name="mobile" id="pub-phone" class="form-control" placeholder="06XX XXX XXX" required>
+          </div>
+          <div class="form-group">
+            <label for="pub-address" data-i18n="publier.lblAddress">Adresse</label>
+            <input type="text" name="address" id="pub-address" class="form-control" placeholder="Votre adresse" required>
+          </div>
+        </div>
+
+        <!-- Section 2: Listing Details -->
+        <div class="form-section-title">
+          <span class="form-section-num">02</span>
+          <span data-i18n="publier.section2">Détails de l'annonce</span>
+        </div>
+
+        <!-- Listing Type Toggle -->
+        <div class="form-group">
+          <label data-i18n="publier.lblType">Type d'annonce</label>
+          <div class="type-toggle">
+            <button type="button" class="type-btn active" data-value="vendre" onclick="selectType(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M20 7h-9m9 10h-9M4 7h.01M4 17h.01M7.8 3H16.2c1.68 0 2.52 0 3.16.33a3 3 0 011.31 1.3C21 5.28 21 6.12 21 7.8v8.4c0 1.68 0 2.52-.33 3.16a3 3 0 01-1.31 1.31c-.64.33-1.48.33-3.16.33H7.8c-1.68 0-2.52 0-3.16-.33a3 3 0 01-1.31-1.31C3 18.72 3 17.88 3 16.2V7.8c0-1.68 0-2.52.33-3.16a3 3 0 011.31-1.31C5.28 3 6.12 3 7.8 3z"/></svg>
+              <span data-i18n="publier.typeVendre">À vendre</span>
+            </button>
+            <button type="button" class="type-btn" data-value="louer" onclick="selectType(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M15 21v-4a2 2 0 00-2-2h-2a2 2 0 00-2 2v4"/><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+              <span data-i18n="publier.typeLouer">À louer</span>
+            </button>
+          </div>
+          <input type="hidden" name="type_annonce" id="typeAnnonce" value="vendre">
+        </div>
+
+        <div class="form-group">
+          <label for="pub-title" data-i18n="publier.lblTitle">Titre de l'annonce</label>
+          <input type="text" name="title" id="pub-title" class="form-control" placeholder="Ex: Appartement 3 pièces centre-ville" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pub-category" data-i18n="publier.lblCategory">Catégorie</label>
+            <select name="category" id="pub-category" class="form-control" required>
+              <option value="" disabled selected data-i18n="publier.optCatDefault">Choisir une catégorie</option>
+              <option value="Appartement" data-i18n="publier.optCat1">Appartement</option>
+              <option value="appartement meublé" data-i18n="publier.optCat2">Appartement meublé</option>
+              <option value="bureau" data-i18n="publier.optCat3">Bureau</option>
+              <option value="Dépôt" data-i18n="publier.optCat4">Dépôt</option>
+              <option value="Ferme" data-i18n="publier.optCat5">Ferme</option>
+              <option value="immeuble" data-i18n="publier.optCat6">Immeuble</option>
+              <option value="local commercial" data-i18n="publier.optCat7">Local commercial</option>
+              <option value="Maison" data-i18n="publier.optCat8">Maison</option>
+              <option value="Terrain" data-i18n="publier.optCat9">Terrain</option>
+              <option value="usine" data-i18n="publier.optCat10">Usine</option>
+              <option value="Villa" data-i18n="publier.optCat11">Villa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pub-city" data-i18n="publier.lblCity">Ville</label>
+            <select name="city" id="pub-city" class="form-control" required>
+              <option value="" disabled selected data-i18n="publier.optCityDefault">Choisir une ville</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Tétouan">Tétouan</option>
+              <option value="Mdiq">Mdiq</option>
+              <option value="Fnideq">Fnideq</option>
+              <option value="Chefchaouen">Chefchaouen</option>
+              <option value="Asilah">Asilah</option>
+              <option value="Al Hoceïma">Al Hoceïma</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row form-row-3">
+          <div class="form-group">
+            <label for="pub-area" data-i18n="publier.lblArea">Zone / Quartier</label>
+            <input type="text" name="area" id="pub-area" class="form-control" placeholder="Ex: Gzenaya" required>
+          </div>
+          <div class="form-group">
+            <label for="pub-price" data-i18n="publier.lblPrice">Prix (DH)</label>
+            <input type="text" name="price" id="pub-price" class="form-control" placeholder="Ex: 850 000" required>
+          </div>
+          <div class="form-group">
+            <label for="pub-space" data-i18n="publier.lblSpace">Superficie (m²)</label>
+            <input type="text" name="space" id="pub-space" class="form-control" placeholder="Ex: 120" required>
+          </div>
+        </div>
+
+        <!-- Section 3: Description -->
+        <div class="form-section-title">
+          <span class="form-section-num">03</span>
+          <span data-i18n="publier.section3">Description</span>
+        </div>
+
+        <div class="form-group">
+          <label for="pub-desc" data-i18n="publier.lblDesc">Description du bien</label>
+          <textarea name="desc" id="pub-desc" class="form-control" rows="6" placeholder="Décrivez votre bien en détail : nombre de pièces, étage, état, équipements..." required></textarea>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="form-group">
+          <label data-i18n="publier.lblPhotos">Photos (optionnel)</label>
+          <div class="upload-zone" id="uploadZone">
+            <input type="file" name="images[]" id="pub-images" multiple accept="image/*" style="display:none">
+            <div class="upload-placeholder" onclick="document.getElementById('pub-images').click()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span data-i18n="publier.uploadText">Cliquez ou glissez vos photos ici</span>
+              <small data-i18n="publier.uploadHint">JPG, PNG · Max 5 Mo par image</small>
+            </div>
+            <div class="upload-preview" id="uploadPreview"></div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-primary publish-submit" id="publishBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <path d="M22 2L11 13"/>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+          <span data-i18n="publier.submitBtn">Publier l'annonce</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner reveal" id="contact">
+  <h2 data-i18n="publier.ctaTitle">Besoin d'aide pour<br><em>votre annonce ?</em></h2>
+  <p data-i18n="publier.ctaDesc">Notre équipe est disponible pour vous assister à chaque étape.</p>
+  <div class="cta-btns">
+    <a href="tel:+2120661354123" class="btn-primary">📞 +212 0661 354 123</a>
+    <a href="mailto:commercial.gzenaya.services@gmail.com" class="btn-outline" data-i18n="publier.ctaEmail">Écrire un email</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid reveal">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+      <p class="footer-desc" data-i18n="shared.footerDesc">Agence immobilière à Tanger. Nous vous accompagnons dans tous vos projets immobiliers : achat, vente, location et investissement.</p>
+      <div class="footer-socials">
+        <a href="https://web.facebook.com/profile.php?id=61585270500995" class="social-link" title="Facebook">f</a>
+        <a href="https://www.instagram.com/simwork2026" class="social-link" title="Instagram">in</a>
+        <a href="https://www.linkedin.com/in/jihad-amerniss-197bb83a1/" class="social-link" title="LinkedIn">li</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-i18n="shared.footerNav">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a></li>
+        <li><a href="achat.html" data-i18n="shared.navBuy">Achat</a></li>
+        <li><a href="location.html" data-i18n="shared.navRent">Location</a></li>
+        <li><a href="contact.html" data-i18n="shared.navContact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading" data-i18n="shared.footerContact">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+2120661354123">📞 +212 0661 354 123</a></li>
+        <li><a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a></li>
+        <li>Tanger, Maroc</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom reveal">
+    <span data-i18n="shared.rights">© 2026 SimWork.ma · Tanger</span>
+    <span data-i18n="shared.madeWith">Conçu avec ❤️ pour vous</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/212661354123" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
+</a>
+
+<script src="translations.js"></script>
+<script>
+// Fix nav offset
+function fixNavOffset() {
+  const nav = document.querySelector('nav');
+  document.body.style.paddingTop = nav.offsetHeight + 'px';
+}
+fixNavOffset();
+window.addEventListener('resize', fixNavOffset);
+
+// Listing type toggle
+function selectType(btn) {
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('typeAnnonce').value = btn.dataset.value;
+}
+
+// Image upload preview
+const fileInput = document.getElementById('pub-images');
+const previewContainer = document.getElementById('uploadPreview');
+const uploadZone = document.getElementById('uploadZone');
+
+fileInput.addEventListener('change', handleFiles);
+
+// Drag and drop
+uploadZone.addEventListener('dragover', e => {
+  e.preventDefault();
+  uploadZone.classList.add('drag-over');
+});
+uploadZone.addEventListener('dragleave', () => {
+  uploadZone.classList.remove('drag-over');
+});
+uploadZone.addEventListener('drop', e => {
+  e.preventDefault();
+  uploadZone.classList.remove('drag-over');
+  fileInput.files = e.dataTransfer.files;
+  handleFiles();
+});
+
+function handleFiles() {
+  previewContainer.innerHTML = '';
+  const files = fileInput.files;
+  if (files.length > 0) {
+    uploadZone.classList.add('has-files');
+  }
+  Array.from(files).forEach((file, i) => {
+    if (!file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const div = document.createElement('div');
+      div.className = 'preview-thumb';
+      div.innerHTML = `
+        <img src="${e.target.result}" alt="Photo ${i + 1}">
+        <span class="preview-name">${file.name.substring(0, 18)}${file.name.length > 18 ? '…' : ''}</span>
+      `;
+      previewContainer.appendChild(div);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// Form submission with success feedback
+document.getElementById('publishForm').addEventListener('submit', function(e) {
+  const btn = document.getElementById('publishBtn');
+  btn.innerHTML = '<span class="spinner"></span> Envoi en cours...';
+  btn.disabled = true;
+});
+</script>
+<script src="theme-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qui sommes-nous – SimWork</title>
+  <meta name="description" content="Découvrez SimWork, votre agence immobilière de confiance à Tanger.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <div class="lang-btns">
+      <button class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</button>
+      <button class="lang-btn" onclick="setLang('ar')">🇲🇦 العربية</button>
+      <button class="lang-btn" onclick="setLang('es')">🇪🇸 Español</button>
+      <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+    </div>
+    <div class="nav-contact">
+      <a href="tel:+2120661354123">📞 0661 354 123</a>
+      <a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a>
+    </div>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+    
+    <button class="hamburger">☰</button>
+    
+    <ul class="nav-links desktop-only">
+      <li><a href="about.html" class="active" data-i18n="shared.navAbout">Qui sommes-nous</a></li>
+      <li><a href="achat.html" data-i18n="shared.navBuy">Achat</a></li>
+      <li><a href="location.html" data-i18n="shared.navRent">Location</a></li>
+      <li><a href="contact.html" data-i18n="shared.navContact">Contact</a></li>
+    </ul>
+    <a href="publier.html" class="nav-cta desktop-only" data-i18n="shared.navCta">+ Publier une annonce</a>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu-overlay">
+  <a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a>
+  <a href="achat.html" data-i18n="shared.navBuy">Achat</a>
+  <a href="location.html" data-i18n="shared.navRent">Location</a>
+  <a href="contact.html" data-i18n="shared.navContact">Contact</a>
+  <a href="publier.html" class="nav-cta" data-i18n="shared.navCta">+ Publier une annonce</a>
+</div>
+
+<!-- INNER HERO -->
+<section class="inner-hero">
+  <h1 class="inner-hero-title reveal" data-i18n="about.heroTitle">Qui sommes-nous</h1>
+  <div class="breadcrumb reveal">
+    <a href="index.html" data-i18n="about.breadcrumbHome">Accueil</a> <span>/</span> <span data-i18n="about.breadcrumbAbout">Qui sommes-nous</span>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <!-- Intro -->
+  <div class="about-grid reveal">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Bureau SimWork" style="width:100%; border: 1px solid var(--border);">
+    </div>
+    <div class="about-text">
+      <h2 data-i18n="about.missionTitle">Notre Mission</h2>
+      <p data-i18n="about.missionText">SimWork vous accompagne tout au long de vos projets immobiliers, qu'il s'agisse d'acheter, de louer, d'investir, de vendre ou de gérer un bien. Nous sommes toujours déterminés à faire notre travail avec excellence.</p>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">💎</div>
+      <h3 class="service-title" data-i18n="about.srv1">Des immobiliers parfaite</h3>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">👨‍💼</div>
+      <h3 class="service-title" data-i18n="about.srv2">Agent d'expériences</h3>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🤝</div>
+      <h3 class="service-title" data-i18n="about.srv3">Vendre votre propriété</h3>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⭐</div>
+      <h3 class="service-title" data-i18n="about.srv4">Experience Agent</h3>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏠</div>
+      <h3 class="service-title" data-i18n="about.srv5">Maison moderne</h3>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔑</div>
+      <h3 class="service-title" data-i18n="about.srv6">Gestion locative</h3>
+    </div>
+  </div>
+
+  <!-- Founder -->
+  <div class="section-header reveal" style="justify-content: center; text-align: center;">
+    <h2 class="section-title" data-i18n="about.teamTitle">Notre <span>Fondateur</span></h2>
+  </div>
+  <div class="reveal" style="max-width:300px; margin:0 auto; text-align:center; background:var(--dark2); border:1px solid var(--border); padding:30px;">
+    <div style="width:120px; height:120px; border-radius:50%; background:var(--dark3); margin:0 auto 20px; display:flex; align-items:center; justify-content:center; font-size:40px;">👨🏽‍💼</div>
+    <h3 style="color:var(--gold); margin-bottom:8px;">Jihad Amerniss</h3>
+    <p style="color:var(--muted); font-size:13px; margin-bottom:16px;">Directeur / Agent Immobilier</p>
+    <a href="mailto:admin@simwork.ma" style="color:var(--text); font-size:13px; text-decoration:none;">admin@simwork.ma</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner reveal" id="contact">
+  <h2 data-i18n="home.ctaTitle">Trouvez la maison de<br><em>vos rêves</em></h2>
+  <p data-i18n="home.ctaDesc">Consultation gratuite, sans rendez-vous. Notre équipe est à votre disposition.</p>
+  <div class="cta-btns">
+    <a href="tel:+2120661354123" class="btn-primary">📞 +212 0661 354 123</a>
+    <a href="contact.html" class="btn-outline" data-i18n="home.ctaEmail">Écrire un email</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid reveal">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+      <p class="footer-desc" data-i18n="shared.footerDesc">Agence immobilière à Tanger. Nous vous accompagnons dans tous vos projets immobiliers : achat, vente, location et investissement.</p>
+      <div class="footer-socials">
+        <a href="https://web.facebook.com/profile.php?id=61585270500995" class="social-link" title="Facebook">f</a>
+        <a href="https://www.instagram.com/simwork2026" class="social-link" title="Instagram">in</a>
+        <a href="https://www.linkedin.com/in/jihad-amerniss-197bb83a1/" class="social-link" title="LinkedIn">li</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-i18n="shared.footerNav">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a></li>
+        <li><a href="achat.html" data-i18n="shared.navBuy">Achat</a></li>
+        <li><a href="location.html" data-i18n="shared.navRent">Location</a></li>
+        <li><a href="contact.html" data-i18n="shared.navContact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading" data-i18n="shared.footerContact">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+2120661354123">📞 +212 0661 354 123</a></li>
+        <li><a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a></li>
+        <li>Tanger, Maroc</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom reveal">
+    <span data-i18n="shared.rights">© 2026 SimWork.ma · Tanger</span>
+    <span data-i18n="shared.madeWith">Conçu avec ❤️ pour vous</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/212661354123" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
+</a>
+
+<script src="translations.js"></script>
+<script>
+function fixNavOffset() {
+  const nav = document.querySelector('nav');
+  document.body.style.paddingTop = nav.offsetHeight + 'px';
+}
+fixNavOffset();
+window.addEventListener('resize', fixNavOffset);
+</script>
+<script src="theme-toggle.js"></script>
+</body>
+</html>

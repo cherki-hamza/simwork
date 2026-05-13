@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'Annonce | SimWork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="annonce-single.css">
+    <link rel="stylesheet" href="annonces.css">
+</head>
+<body>
+    <nav>
+      <div class="nav-top">
+        <div class="lang-btns">
+          <button class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</button>
+          <button class="lang-btn" onclick="setLang('ar')">🇲🇦 العربية</button>
+          <button class="lang-btn" onclick="setLang('es')">🇪🇸 Español</button>
+          <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+        </div>
+        <div class="nav-contact">
+          <a href="tel:+2120661354123">📞 0661 354 123</a>
+          <a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a>
+        </div>
+      </div>
+      <div class="nav-main">
+        <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links desktop-only">
+          <li><a href="about.html">Qui sommes-nous</a></li>
+          <li><a href="achat.html">Achat</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="publier.html" class="nav-cta desktop-only">+ Publier une annonce</a>
+      </div>
+    </nav>
+    <div class="mobile-menu-overlay">
+      <a href="about.html">Qui sommes-nous</a>
+      <a href="achat.html">Achat</a>
+      <a href="location.html">Location</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lbClose">✕</button>
+        <div class="lightbox-counter" id="lbCounter">1 / 1</div>
+        <div class="lightbox-main">
+            <div class="lightbox-arrow lb-prev" id="lbPrev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></div>
+            <img id="lbImage" src="" alt="">
+            <div class="lightbox-arrow lb-next" id="lbNext"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+        </div>
+        <div class="lightbox-thumbs" id="lbThumbs"></div>
+    </div>
+
+    <main class="single-page" id="mainContent" style="display:none;">
+        <!-- Back Link -->
+        <div style="max-width:1400px;margin:0 auto;padding:16px 20px 0;">
+            <a href="annonces.html" class="back-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Retour aux annonces</a>
+        </div>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-section">
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-main" id="galleryMain"></div>
+                <div class="gallery-side" id="gallerySide1"></div>
+                <div class="gallery-side" id="gallerySide2"></div>
+                <button class="gallery-count-btn" id="galleryBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    <span id="photoCount">Voir les photos</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Property Layout -->
+        <div class="property-layout">
+            <!-- Left Column -->
+            <div>
+                <div class="property-header">
+                    <div class="property-badge-row">
+                        <span class="p-badge p-badge-status" id="pStatus"></span>
+                        <span class="p-badge p-badge-ref" id="pRef"></span>
+                    </div>
+                    <h1 class="property-title" id="pTitle"></h1>
+                    <div class="property-location-row">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span id="pLocation"></span>
+                    </div>
+                    <div class="property-price-tag">
+                        <span class="price-amount" id="pPrice"></span>
+                    </div>
+                </div>
+
+                <!-- Specs Strip -->
+                <div class="specs-strip">
+                    <div class="spec-item">
+                        <div class="spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+                        <div class="spec-value" id="pSurface"></div>
+                        <div class="spec-label">Surface</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                        <div class="spec-value" id="pRooms"></div>
+                        <div class="spec-label">Chambres</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h20M2 12A10 10 0 1022 12"/></svg></div>
+                        <div class="spec-value" id="pBath"></div>
+                        <div class="spec-label">SDB</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div class="spec-value" id="pDate"></div>
+                        <div class="spec-label">Date</div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="description-section">
+                    <div class="section-label">Description</div>
+                    <div class="description-text" id="pDesc"></div>
+                    <button class="desc-toggle" id="descToggle">Lire la suite ↓</button>
+                </div>
+
+                <!-- Details -->
+                <div class="details-grid-section">
+                    <div class="section-label">Caractéristiques</div>
+                    <div class="details-list" id="detailsList"></div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="property-sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">Intéressé par ce bien ?</h3>
+                    <div class="sidebar-agent">
+                        <div class="agent-avatar">SW</div>
+                        <div><div class="agent-name">SimWork Immobilier</div><div class="agent-role">Conseiller immobilier · Tanger</div></div>
+                    </div>
+                    <div class="sidebar-actions">
+                        <a href="#" id="waLink" class="btn-action btn-whatsapp" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.213l-.29-.174-3.091.81.826-3.016-.192-.304A8 8 0 1112 20z"/></svg>
+                            WhatsApp
+                        </a>
+                        <a href="#" id="phoneLink" class="btn-action btn-call">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            <span id="phoneText">Appeler</span>
+                        </a>
+                        <a href="mailto:commercial.gzenaya.services@gmail.com" class="btn-action btn-email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Envoyer un email
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">Envoyer un message</h3>
+                    <form class="sidebar-form" onsubmit="return false;">
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <input type="tel" placeholder="Votre téléphone">
+                        <textarea placeholder="Je suis intéressé par ce bien..." required></textarea>
+                        <button type="submit" class="btn-submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related -->
+        <section class="related-section">
+            <div class="related-header"><h2 class="related-title">Biens Similaires</h2></div>
+            <div class="related-grid" id="relatedGrid"></div>
+        </section>
+    </main>
+
+    <div id="loadingMsg" style="text-align:center;padding:120px 20px;color:var(--gold);font-size:18px;">Chargement...</div>
+    <div id="errorMsg" style="display:none;text-align:center;padding:120px 20px;color:#e74c3c;font-size:18px;">Annonce introuvable. <a href="annonces.html" style="color:var(--gold);">Retour</a></div>
+
+    <footer>
+      <div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a><p class="footer-desc">Agence immobilière à Tanger.</p></div>
+      <div><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="about.html">Qui sommes-nous</a></li><li><a href="achat.html">Achat</a></li><li><a href="location.html">Location</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="tel:+2120661354123">📞 +212 0661 354 123</a></li><li><a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a></li><li>Tanger, Maroc</li></ul></div></div>
+      <div class="footer-bottom"><span>© 2026 SimWork.ma · Tanger</span></div>
+    </footer>
+
+    <a href="https://wa.me/212661354123" class="whatsapp-btn" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 007.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 003.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0013.6 2.326zM7.994 14.521a6.573 6.573 0 01-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 01-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 014.66 1.931 6.557 6.557 0 011.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 00-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></a>
+
+    <script src="translations.js"></script>
+    <script>
+    // Nav offset
+    (function(){const n=document.querySelector('nav');if(n)document.body.style.paddingTop=n.offsetHeight+'px';window.addEventListener('resize',()=>{if(n)document.body.style.paddingTop=n.offsetHeight+'px';});})();
+
+    const params = new URLSearchParams(location.search);
+    const aId = parseInt(params.get('id'));
+    const aType = params.get('type') || 'vente';
+    let allImages = [];
+    let lbIndex = 0;
+
+    if (!aId) { document.getElementById('loadingMsg').style.display='none'; document.getElementById('errorMsg').style.display='block'; }
+    else { init(); }
+
+    async function init() {
+        try {
+            const r = await fetch('data/annonces.json');
+            const d = await r.json();
+            const list = d[aType] || [];
+            const p = list.find(i => i.id === aId);
+            if (!p) throw 'not found';
+
+            allImages = (p.images && p.images.length) ? p.images : ['https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200'];
+
+            // Gallery grid
+            const gm = document.getElementById('galleryMain');
+            gm.innerHTML = `<img src="${allImages[0]}" alt="${p.title}"><div class="gallery-overlay"></div>`;
+            gm.onclick = () => openLightbox(0);
+
+            if (allImages.length > 1) {
+                const s1 = document.getElementById('gallerySide1');
+                s1.innerHTML = `<img src="${allImages[1]}" alt=""><div class="gallery-overlay"></div>`;
+                s1.onclick = () => openLightbox(1);
+            }
+            if (allImages.length > 2) {
+                const s2 = document.getElementById('gallerySide2');
+                s2.innerHTML = `<img src="${allImages[2]}" alt=""><div class="gallery-overlay"></div>`;
+                s2.onclick = () => openLightbox(2);
+            }
+            document.getElementById('photoCount').textContent = `Voir les ${allImages.length} photos`;
+            document.getElementById('galleryBtn').onclick = () => openLightbox(0);
+
+            // Lightbox thumbs
+            const lt = document.getElementById('lbThumbs');
+            allImages.forEach((src, i) => {
+                const t = document.createElement('div');
+                t.className = 'lb-thumb' + (i === 0 ? ' active' : '');
+                t.innerHTML = `<img src="${src}" alt="">`;
+                t.onclick = () => lbGo(i);
+                lt.appendChild(t);
+            });
+
+            // Property info
+            document.getElementById('pTitle').textContent = p.title;
+            document.title = p.title + ' | SimWork';
+            document.getElementById('pPrice').textContent = p.price;
+            document.getElementById('pLocation').textContent = p.location;
+            document.getElementById('pSurface').textContent = p.surface;
+            document.getElementById('pRooms').textContent = p.rooms;
+            document.getElementById('pBath').textContent = p.bathrooms;
+            document.getElementById('pDate').textContent = p.date || '2024';
+            document.getElementById('pDesc').textContent = p.description;
+            document.getElementById('pStatus').textContent = aType === 'vente' ? '🏷️ À Vendre' : '🔑 À Louer';
+            document.getElementById('pRef').textContent = p.reference;
+
+            document.getElementById('waLink').href = `https://wa.me/${p.whatsapp}?text=Bonjour, je suis intéressé par: ${p.title}`;
+            document.getElementById('phoneLink').href = `tel:${p.phone}`;
+            document.getElementById('phoneText').textContent = p.phone || 'Appeler';
+
+            // Details list
+            const dl = document.getElementById('detailsList');
+            const details = [
+                {icon:'📍', label:'Ville', value: p.location},
+                {icon:'📏', label:'Surface', value: p.surface},
+                {icon:'🛏️', label:'Chambres', value: p.rooms},
+                {icon:'🛁', label:'Salles de bains', value: p.bathrooms},
+                {icon:'📋', label:'Référence', value: p.reference},
+                {icon:'🏠', label:'Statut', value: aType==='vente'?'À Vendre':'À Louer'}
+            ];
+            details.forEach(d => {
+                dl.innerHTML += `<div class="detail-row"><div class="detail-row-icon">${d.icon}</div><div><div class="detail-row-label">${d.label}</div><div class="detail-row-value">${d.value}</div></div></div>`;
+            });
+
+            // Desc toggle
+            const descEl = document.getElementById('pDesc');
+            const toggleBtn = document.getElementById('descToggle');
+            toggleBtn.addEventListener('click', () => {
+                descEl.classList.toggle('expanded');
+                toggleBtn.textContent = descEl.classList.contains('expanded') ? 'Réduire ↑' : 'Lire la suite ↓';
+            });
+
+            // Related
+            const related = list.filter(x => x.id !== aId).slice(0, 3);
+            const rg = document.getElementById('relatedGrid');
+            related.forEach(item => {
+                const img = (item.images && item.images.length) ? item.images[0] : 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800';
+                const badge = aType === 'vente' ? 'badge-vendre' : 'badge-louer';
+                const badgeT = aType === 'vente' ? 'À VENDRE' : 'À LOUER';
+                rg.innerHTML += `<a href="annonce-single.html?id=${item.id}&type=${aType}" class="card"><div class="card-img"><img src="${img}" style="width:100%;height:100%;object-fit:cover" alt="${item.title}"><div class="card-badge ${badge}">${badgeT}</div></div><div class="card-body"><div class="card-price">${item.price}</div><div class="card-title">${item.title}</div><div class="card-location">${item.location}</div></div></a>`;
+            });
+
+            // Show
+            document.getElementById('loadingMsg').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        } catch(e) {
+            console.error(e);
+            document.getElementById('loadingMsg').style.display = 'none';
+            document.getElementById('errorMsg').style.display = 'block';
+        }
+    }
+
+    // Lightbox
+    function openLightbox(idx) {
+        lbIndex = idx;
+        const lb = document.getElementById('lightbox');
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lbUpdate();
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function lbGo(idx) {
+        lbIndex = (idx + allImages.length) % allImages.length;
+        lbUpdate();
+    }
+    function lbUpdate() {
+        document.getElementById('lbImage').src = allImages[lbIndex];
+        document.getElementById('lbCounter').textContent = `${lbIndex+1} / ${allImages.length}`;
+        document.querySelectorAll('.lb-thumb').forEach((t,i) => t.classList.toggle('active', i === lbIndex));
+    }
+    document.getElementById('lbClose').onclick = closeLightbox;
+    document.getElementById('lbPrev').onclick = () => lbGo(lbIndex - 1);
+    document.getElementById('lbNext').onclick = () => lbGo(lbIndex + 1);
+    document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lbGo(lbIndex - 1);
+        if (e.key === 'ArrowRight') lbGo(lbIndex + 1);
+    });
+    </script>
+<script src="theme-toggle.js"></script>
+</body>
+</html>

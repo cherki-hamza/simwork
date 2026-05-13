@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – SimWork</title>
+  <meta name="description" content="Contactez SimWork, votre agence immobilière à Tanger.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <div class="lang-btns">
+      <button class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</button>
+      <button class="lang-btn" onclick="setLang('ar')">🇲🇦 العربية</button>
+      <button class="lang-btn" onclick="setLang('es')">🇪🇸 Español</button>
+      <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+    </div>
+    <div class="nav-contact">
+      <a href="tel:+2120661354123">📞 0661 354 123</a>
+      <a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a>
+    </div>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+    
+    <button class="hamburger">☰</button>
+    
+    <ul class="nav-links desktop-only">
+      <li><a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a></li>
+      <li><a href="achat.html" data-i18n="shared.navBuy">Achat</a></li>
+      <li><a href="location.html" data-i18n="shared.navRent">Location</a></li>
+      <li><a href="contact.html" class="active" data-i18n="shared.navContact">Contact</a></li>
+    </ul>
+    <a href="publier.html" class="nav-cta desktop-only" data-i18n="shared.navCta">+ Publier une annonce</a>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu-overlay">
+  <a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a>
+  <a href="achat.html" data-i18n="shared.navBuy">Achat</a>
+  <a href="location.html" data-i18n="shared.navRent">Location</a>
+  <a href="contact.html" data-i18n="shared.navContact">Contact</a>
+  <a href="publier.html" class="nav-cta" data-i18n="shared.navCta">+ Publier une annonce</a>
+</div>
+
+<!-- INNER HERO -->
+<section class="inner-hero">
+  <h1 class="inner-hero-title reveal" data-i18n="contact.heroTitle">Contactez-nous</h1>
+  <div class="breadcrumb reveal">
+    <a href="index.html" data-i18n="contact.breadcrumbHome">Accueil</a> <span>/</span> <span data-i18n="contact.breadcrumbContact">Contact</span>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="contact-container">
+    
+    <!-- Info -->
+    <div class="contact-info reveal">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div class="contact-details">
+          <h3 data-i18n="contact.lblAddress">Adresse</h3>
+          <p>Zone industrielle gzenaya lot 428 étage 2 n°7 Tanger</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-details">
+          <h3 data-i18n="contact.lblPhone">Téléphone</h3>
+          <a href="tel:+2120661354123">+212 0661 354 123</a>
+          <a href="tel:+2120678920069">+212 0678 920 069</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-details">
+          <h3 data-i18n="contact.lblEmail">Email</h3>
+          <a href="mailto:commercial.gzenaya.services@gmail.com">commercial.gzenaya.services@gmail.com</a>
+          <a href="mailto:amerniss.j@gmail.com">amerniss.j@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="contact-form reveal">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label data-i18n="contact.formName">Nom</label>
+          <input type="text" class="form-control" data-i18n="contact.formName" placeholder="Votre nom" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="contact.formEmail">Email</label>
+          <input type="email" class="form-control" data-i18n="contact.formEmail" placeholder="Votre email" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="contact.formPhone">Téléphone</label>
+          <input type="tel" class="form-control" data-i18n="contact.formPhone" placeholder="Votre téléphone" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="contact.formSubject">Sujet</label>
+          <input type="text" class="form-control" data-i18n="contact.formSubject" placeholder="Sujet de votre message" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="contact.formMsg">Message</label>
+          <textarea class="form-control" data-i18n="contact.formMsg" placeholder="Votre message" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%" data-i18n="contact.formBtn">Envoyer le message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Map -->
+  <div class="reveal" style="text-align: center; margin-top: 80px;">
+    <h2 class="section-title" data-i18n="contact.mapTitle">Notre Emplacement</h2>
+  </div>
+  <div class="map-container reveal">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3682.582121068974!2d-5.9032985!3d35.7099867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b889c21773605%3A0xd2c82f5c11d9c18d!2sSimwork!5e1!3m2!1sfr!2sma!4v1766571801828!5m2!1sfr!2sma" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid reveal">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><img src="images/img/main-logo.png" alt="SimWork"></a>
+      <p class="footer-desc" data-i18n="shared.footerDesc">Agence immobilière à Tanger. Nous vous accompagnons dans tous vos projets immobiliers : achat, vente, location et investissement.</p>
+      <div class="footer-socials">
+        <a href="https://web.facebook.com/profile.php?id=61585270500995" class="social-link" title="Facebook">f</a>
+        <a href="https://www.instagram.com/simwork2026" class="social-link" title="Instagram">in</a>
+        <a href="https://www.linkedin.com/in/jihad-amerniss-197bb83a1/" class="social-link" title="LinkedIn">li</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading" data-i18n="shared.footerNav">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="about.html" data-i18n="shared.navAbout">Qui sommes-nous</a></li>
+        <li><a href="achat.html" data-i18n="shared.navBuy">Achat</a></li>
+        <li><a href="location.html" data-i18n="shared.navRent">Location</a></li>
+        <li><a href="contact.html" data-i18n="shared.navContact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading" data-i18n="shared.footerContact">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+2120661354123">📞 +212 0661 354 123</a></li>
+        <li><a href="mailto:commercial.gzenaya.services@gmail.com">✉️ Email</a></li>
+        <li>Tanger, Maroc</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom reveal">
+    <span data-i18n="shared.rights">© 2026 SimWork.ma · Tanger</span>
+    <span data-i18n="shared.madeWith">Conçu avec ❤️ pour vous</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/212661354123" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
+</a>
+
+<script src="translations.js"></script>
+<script>
+function fixNavOffset() {
+  const nav = document.querySelector('nav');
+  document.body.style.paddingTop = nav.offsetHeight + 'px';
+}
+fixNavOffset();
+window.addEventListener('resize', fixNavOffset);
+</script>
+<script src="theme-toggle.js"></script>
+</body>
+</html>
